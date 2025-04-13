@@ -1,5 +1,5 @@
 ## 🧑‍🤖 `app/resume_ai.py`python
-import openai
+import openrouter
 import os
 
 openrouter.api_key = os.getenv("OPEN-ROUTER_API_KEY")
