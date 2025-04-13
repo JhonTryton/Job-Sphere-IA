@@ -1,16 +1,26 @@
-## 📁 `app/main.py python
+# =========================
+# 1. app/main.py (Lanceur principal avec FastAPI et uvicorn)
+# =========================
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app import auth, jobs
+from routers import auth, jobs, applications, user
 
-app = FastAPI()
+app = FastAPI(title="AI Job Application Portal")
 
-origins = ["*"]
-app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(auth.router)
 app.include_router(jobs.router)
+app.include_router(applications.router)
+app.include_router(user.router)
 
 @app.get("/")
-def root():
-    return {"msg": "Job App AI Tool is running"}
+def read_root():
+    return {"message": "Welcome to the AI Job Application Portal!"}
