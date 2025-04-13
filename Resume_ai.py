@@ -2,7 +2,7 @@
 import openai
 import os
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openrouter.api_key = os.getenv("OPEN-ROUTER_API_KEY")
 
 async def generate_letter(name, company, gender, job):
     prompt = f"""
