@@ -1,0 +1,19 @@
+# =========================
+# 10. static/style.css (Interface stylisée via React ou HTML/CSS selon frontend choisi)
+# =========================
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #eef3f8;
+    color: #333;
+    padding: 2rem;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
