@@ -11,7 +11,7 @@ async def generate_letter(name, company, gender, job):
     Respecte les en-têtes professionnels et adapte le ton.
     """
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="Quasar Alpha",
         messages=[{"role": "user", "content": prompt}]
     )
     return response["choices"][0]["message"]["content"]
