@@ -1,13 +1,11 @@
-## 🔄 `app/database.py`python
-from motor.motor_asyncio import AsyncIOMotorClient
-from dotenv import load_dotenv
-import os
+# =========================
+# 2. app/database.py (Connexion MongoDB)
+# =========================
 
-load_dotenv()
-MONGO_URL = os.getenv("MONGODB_URL")
+from pymongo import MongoClient
 
-client = AsyncIOMotorClient(MONGO_URL)
-db = client["job_app"]
-users = db["users"]
-jobs = db["jobs"]
-applications = db["applications"]
+client = MongoClient("mongodb+srv://<username>:<password>@cluster.mongodb.net")
+db = client.job_portal
+users_collection = db.users
+jobs_collection = db.jobs
+applications_collection = db.applications
